@@ -1,0 +1,28 @@
+[project]
+name = "lsp"
+version = "0.1.0"
+description = "LSP Build from scratch"
+readme = "README.md"
+authors = [{ name = "Meek Msaki", email = "meek10x@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "jupyter>=1.1.1",
+    "pytest>=8.4.1",
+ "pytest-watcher>=0.4.3",
+]
+
+[project.scripts]
+lsp = "lsp:main"
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.pytest-watcher]
+now = false
+clear = true
+delay = 0.2
+runner = "pytest"
+runner_args = []
+patterns = ["*.py"]
+ignore_patterns = []
